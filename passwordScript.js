@@ -42,7 +42,7 @@ function buttonMethod() {
         secretPasswordHolder.value = thePassword;
 
         var newPasswordAlert = document.getElementById("generatedPassword");
-        newPasswordAlert.innerHTML = "Your new password is: " + thePassword + " (click to copy to clipboard)";
+        newPasswordAlert.innerHTML = "Your new password is: " + thePassword + " (click to copy to clipboard. *Not supported on IOS devices)";
         newPasswordAlert.style.display = "block";
     }
 }
