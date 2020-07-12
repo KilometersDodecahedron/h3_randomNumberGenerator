@@ -1,0 +1,81 @@
+<!-- for the Password Generator -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- I'm not entirely sure what this does, but it's propper html  -->
+    <meta charset="UTF-8">
+    <!-- Boostrap needs this to be mobile responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- tells the browser what goes in the tab -->
+    <title>Random Password Generator</title>
+    <!-- Access Bootstrap  -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- custom css made by me  -->
+    <link rel="stylesheet" href="./passwordGenerator.css">
+    <!-- add a favicon -->
+    <link rel="icon" type="image/png" href="https://icon-library.com/images/dice-icon-png/dice-icon-png-6.jpg">
+</head>
+<body>
+    <header>
+        <h1>Random Password Generator</h1>
+    </header>
+
+    <main>
+        <!-- the input and output forms for the page -->
+        <div class="container">
+
+            <!-- the check boxes for character types -->
+            <form>
+                <h2>Types of characters allowed <br>(must select at least 1)</h2>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="uppercaseCheckbox" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Uppercase Letters</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="lowercaseCheckbox" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Lowercase Letters</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="numberCheckbox" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Numbers</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="specialCharCheckbox" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox3">Special Characters</label>
+                </div>
+            </form>
+
+            <br>
+
+            <!-- Select # of characters and submit  -->
+            <form>
+                <div class="form-group">
+                  <label for="lengthInput"><h2># of Characters (8 to 128)</h2></label>
+                  <input type="email" class="form-control" id="lengthInput" placeholder="Enter a number from 8 to 128">
+                  </div>
+            </form>
+
+            <button type="button" onclick="buttonMethod()" class="btn btn-primary">Generate Password</button>
+
+            <!-- display generated password  -->
+            <div class="alert alert-info" id="generatedPassword" role="alert">
+                Your new password is: Password
+            </div>
+
+            <!-- let the user know they need to select at least 1 char type  -->
+            <div class="alert alert-danger" id="alertCheckBoxes" role="alert">
+                You must select at least 1 character type
+            </div>
+
+            <!-- let the user know their # of characters input was not valid  -->
+            <div class="alert alert-danger" id="alertLength" role="alert">
+                You must select a number from 8 to 128
+            </div>
+        </div>
+    </main>
+
+    <input id="secretElement" type="text"></input>
+
+    <script src="passwordScript.js"></script>
+</body>
+</html>
